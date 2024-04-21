@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Finance Mobile Application-UX/UI Design Screen One</title>
+  <title>CodePen - Finance Mobile Application-UX/UI Design Screen One</title>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
@@ -35,58 +35,58 @@
   <div class="email">
     <label for="email">Email Address</label>
     <div class="sec-2">
-      <ion-icon name="mail-outline"></ion-icon>
-      <input type="email" name="email" placeholder="Username@gmail.com"/>
-    </div>
+  <ion-icon name="mail-outline"></ion-icon>
+  <input type="email" name="email" placeholder="Username@gmail.com"/>
+</div>
+</div>
+<div class="password">
+  <label for="password">Password</label>
+  <div class="  sec-2">
+    <ion-icon name="lock-closed-outline"></ion-icon>
+    <input class="pas" type="password" name="password" placeholder="············"/>
+    <ion-icon class="show-hide" name="eye-outline"></ion-icon>
   </div>
-  <div class="password">
-    <label for="password">Password</label>
-    <div class="sec-2">
-      <ion-icon name="lock-closed-outline"></ion-icon>
-      <input class="pas" type="password" name="password" placeholder="············"/>
-      <ion-icon class="show-hide" name="eye-outline"></ion-icon>
-    </div>
-  </div>
-  <button class="login">Login</button>
-  <a href="signup.html"><button class="signup">Sign Up</button></a>
-  <div class="footer"><span><a href="signup.html">Signup</a></span><span>Forgot Password?</span></div>
+</div>
+<button class="login">Login </button>
+<a href="signup.html"><button class="signup">Sign Up</button></a> <!-- Updated: Linked to signup.html -->
+<div class="footer"><span>Signup</span><span>Forgot Password?</span></div>
 </div>
 <!-- partial -->
 
 <!-- Firebase initialization and login handling -->
 <script type="module">
-  // Import the functions you need from the Firebase SDKs
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+// Import the functions you need from the Firebase SDKs
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
 
-  // Your Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBkzavGtc_WL0mqP_SC0CMpi-45MybYDMg",
-    authDomain: "user-data-e96ed.firebaseapp.com",
-    projectId: "user-data-e96ed",
-    storageBucket: "user-data-e96ed.appspot.com",
-    messagingSenderId: "1066626734064",
-    appId: "1:1066626734064:web:6729ff5d4538c160422f35",
-    measurementId: "G-BG8HXG83TQ"
-  };
+// Your Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBkzavGtc_WL0mqP_SC0CMpi-45MybYDMg",
+  authDomain: "user-data-e96ed.firebaseapp.com",
+  projectId: "user-data-e96ed",
+  storageBucket: "user-data-e96ed.appspot.com",
+  messagingSenderId: "1066626734064",
+  appId: "1:1066626734064:web:6729ff5d4538c160422f35",
+  measurementId: "G-BG8HXG83TQ"
+};
 
-  try {
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  } catch (error) {
-    console.error("Error initializing Firebase:", error);
-  }
+try {
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+} catch (error) {
+  console.error("Error initializing Firebase:", error);
+}
 
-  // Function to handle successful login
-  function handleLogin() {
-    // You can perform any actions you want here
-    // For example, you can redirect the user to another page
-    window.location.href = "welcome.html";
-  }
+// Function to handle successful login
+function handleLogin() {
+  // You can perform any actions you want here
+  // For example, you can redirect the user to another page
+  window.location.href = "welcome.html";
+}
 
-  // Add event listener to the login button
-  document.querySelector(".login").addEventListener("click", handleLogin);
+// Add event listener to the login button
+document.querySelector(".login").addEventListener("click", handleLogin);
 </script>
 </body>
 </html>
