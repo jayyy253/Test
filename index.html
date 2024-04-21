@@ -51,15 +51,14 @@
   <div class="footer"><span>Signup</span><span>Forgot Password?</span></div>
 </div>
 <!-- partial -->
-  <script type="module">
-  // Import the functions you need from the SDKs you need
+
+<!-- Firebase initialization and login handling -->
+<script type="module">
+  // Import the functions you need from the Firebase SDKs
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  // Your Firebase configuration
   const firebaseConfig = {
     apiKey: "AIzaSyBkzavGtc_WL0mqP_SC0CMpi-45MybYDMg",
     authDomain: "user-data-e96ed.firebaseapp.com",
@@ -70,9 +69,23 @@
     measurementId: "G-BG8HXG83TQ"
   };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  try {
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+      } catch (error) {
+    console.error("Error initializing Firebase:", error);
+  }
+
+  // Function to handle successful login
+  function handleLogin() {
+    // You can perform any actions you want here
+    // For example, you can redirect the user to another page
+    window.location.href = "welcome.html";
+  }
+
+  // Add event listener to the login button
+  document.querySelector(".login").addEventListener("click", handleLogin);
 </script>
 </body>
 </html>
