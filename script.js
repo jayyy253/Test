@@ -1,18 +1,21 @@
-// Firebase initialization
+// Firebase initialization and login handling
+// Import the functions you need from the Firebase SDKs
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
 
+// Your Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBkzavGtc_WL0mqP_SC0CMpi-45MybYDMg",
-  authDomain: "user-data-e96ed.firebaseapp.com",
-  projectId: "user-data-e96ed",
-  storageBucket: "user-data-e96ed.appspot.com",
-  messagingSenderId: "1066626734064",
-  appId: "1:1066626734064:web:6729ff5d4538c160422f35",
-  measurementId: "G-BG8HXG83TQ"
-};
+    apiKey: "AIzaSyBkzavGtc_WL0mqP_SC0CMpi-45MybYDMg",
+    authDomain: "user-data-e96ed.firebaseapp.com",
+    projectId: "user-data-e96ed",
+    storageBucket: "user-data-e96ed.appspot.com",
+    messagingSenderId: "1066626734064",
+    appId: "1:1066626734064:web:ba3150781be7cf22422f35",
+    measurementId: "G-XTX9L4NJ2J"
+  };
 
 try {
+  // Initialize Firebase
   const app = initializeApp(firebaseConfig);
   const analytics = getAnalytics(app);
 } catch (error) {
@@ -21,11 +24,12 @@ try {
 
 // Function to handle successful login
 function handleLogin() {
-  // Redirect user to welcome page after login
+  // You can perform any actions you want here
+  // For example, you can redirect the user to another page
   window.location.href = "welcome.html";
 }
 
-// Event listener for login button
+// Add event listener to the login button
 document.querySelector(".login").addEventListener("click", handleLogin);
 
 // Get the modal element
