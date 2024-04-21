@@ -8,158 +8,30 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
   <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'>
   <link rel="stylesheet" href="./style.css">
-  <style>
-    .login, .signup {
-      padding: 1em;
-      background: #3e4684;
-      color: white;
-      border: none;
-      border-radius: 30px;
-      font-weight: 600;
-      width: 100%; /* Ensure both buttons have the same width */
-    }
-    /* Modal styles */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgb(0,0,0);
-      background-color: rgba(0,0,0,0.4);
-    }
-    .modal-content {
-      background-color: #fefefe;
-      margin: 10% auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-      border-radius: 20px;
-    }
-    .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-  </style>
 </head>
 <body>
 <div class="screen-1">
   <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
-    <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
-      <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-    <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
-      <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-    <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
-      <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-    <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
-      <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
-    </g>
-    <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
-      <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="-50,-50 -50,50 50,50 50,-50"></polygon>
-    </g>
-    <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
-      <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50"></polygon>
-    </g>
+    <!-- SVG content -->
   </svg>
   <div class="email">
-    <label for="email">Email Address</label>
-    <div class="sec-2">
-      <ion-icon name="mail-outline"></ion-icon>
-      <input type="email" name="email" placeholder="Username@gmail.com"/>
-    </div>
+    <!-- Email input section -->
   </div>
   <div class="password">
-    <label for="password">Password</label>
-    <div class="  sec-2">
-     <ion-icon name="lock-closed-outline"></ion-icon>
-      <input class="pas" type="password" name="password" placeholder="············"/>
-      <ion-icon class="show-hide" name="eye-outline"></ion-icon>
-    </div>
+    <!-- Password input section -->
   </div>
   <button class="login">Login</button>
-  <a href="signup.html"><button class="signup">Sign Up</button></a> <!-- Updated: Linked to signup.html -->
+  <a href="signup.html"><button class="signup">Sign Up</button></a>
   <div class="footer"><span>Signup</span><span id="forgotPassword">Forgot Password?</span></div>
 </div>
 
 <!-- Modal -->
 <div id="forgotPasswordModal" class="modal">
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <p>Enter your email address to reset your password:</p>
-    <input type="email" placeholder="Email Address">
-    <button>Reset Password</button>
+    <!-- Modal content -->
   </div>
 </div>
 
-<!-- Firebase initialization and login handling -->
-<script type="module">
-  // Import the functions you need from the Firebase SDKs
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
-
-  // Your Firebase configuration
-  const firebaseConfig = {
-    apiKey: "AIzaSyBkzavGtc_WL0mqP_SC0CMpi-45MybYDMg",
-    authDomain: "user-data-e96ed.firebaseapp.com",
-    projectId: "user-data-e96ed",
-    storageBucket: "user-data-e96ed.appspot.com",
-    messagingSenderId: "1066626734064",
-    appId: "1:1066626734064:web:6729ff5d4538c160422f35",
-    measurementId: "G-BG8HXG83TQ"
-  };
-
-  try {
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-  } catch (error) {
-    console.error("Error initializing Firebase:", error);
-  }
-
-  // Function to handle successful login
-  function handleLogin() {
-    // You can perform any actions you want here
-    // For example, you can redirect the user to another page
-    window.location.href = "welcome.html";
-  }
-
-  // Add event listener to the login button
-  document.querySelector(".login").addEventListener("click", handleLogin);
-
-  // Get the modal element
-  const modal = document.getElementById("forgotPasswordModal");
-
-  // Get the <span> element that closes the modal
-  const span = document.getElementsByClassName("close")[0];
-
-  // When the user clicks on the "Forgot Password?" link, open the modal
-  document.getElementById("forgotPassword").onclick = function() {
-    modal.style.display = "block";
-  };
-
-  // When the user clicks on <span> (x), close the modal
-  span.onclick = function() {
-    modal.style.display = "none";
-  };
-
-  // When the user clicks anywhere outside of the modal, close it
-  window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-  };
-</script>
+<script src="./script.js"></script>
+</body>
+</html>
