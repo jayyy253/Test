@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="screen-1">
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
+    <!-- Your SVG logo code here -->
+  </svg>
+  <div class="email">
+    <label for="email">Email Address</label>
+    <div class="sec-2">
+      <ion-icon name="mail-outline"></ion-icon>
+      <input type="email" name="email" placeholder="Username@gmail.com"/>
+    </div>
+  </div>
+  <div class="password">
+    <label for="password">Password</label>
+    <div class="sec-2">
+      <ion-icon name="lock-closed-outline"></ion-icon>
+      <input class="pas" type="password" name="password" placeholder="············"/>
+      <ion-icon class="show-hide" name="eye-outline"></ion-icon>
+    </div>
+  </div>
+  <button class="signup">Sign Up</button>
+  <div class="footer"><span>Already have an account? <a href="index.html">Login</a></span></div>
+</div>
+
+<script type="module">
+  // Firebase initialization and sign-up handling
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-analytics.js";
+  import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyBkzavGtc_WL0mqP_SC0CMpi-45MybYDMg",
+    authDomain: "user-data-e96ed.firebaseapp.com",
+    projectId: "user-data-e96ed",
+    storageBucket: "user-data-e96ed.appspot.com",
+    messagingSenderId: "1066626734064",
+    appId: "1:1066626734064:web:6729ff5d4538c160422f35",
+    measurementId: "G-BG8HXG83TQ"
+  };
+
+  try {
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+  } catch (error) {
+    console.error("Error initializing Firebase:", error);
+  }
+
+  function handleSignUp() {
+    const email = document.querySelector("input[name='email']").value;
+    const password = document.querySelector("input[name='password']").value;
+
+    // Create a new user with email and password
+    const auth = getAuth();
+    createUserWithEmailAndPassword(auth, email, password)
+      .then(() => {
+        // Sign-up successful, redirect to login page
+        window.location.href = "index.html";
+      })
+      .catch((error) => {
+        // Handle sign-up errors
+        console.error("Error signing up:", error.message);
+        // Optionally, display an error message to the user
+      });
+  }
+
+  document.querySelector(".signup").addEventListener("click", handleSignUp);
+</script>
+</body>
+</html>
