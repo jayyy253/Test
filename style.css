@@ -91,13 +91,14 @@ body {
 .screen-1 .password .show-hide {
   margin-right: -5em;
 }
-.screen-1 .login {
-  padding: 1em;
-  background: #3e4684;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-weight: 600;
+.screen-1 .login,
+.screen-1 .signup {
+  padding: 1em; /* Match the padding of the login button */
+  background: #3e4684; /* Match the background color of the login button */
+  color: white; /* Match the text color of the login button */
+  border: none; /* Match the border properties of the login button */
+  border-radius: 30px; /* Match the border-radius of the login button */
+  font-weight: 600; /* Match the font weight of the login button */
 }
 .screen-1 .footer {
   display: flex;
